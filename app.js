@@ -30,6 +30,12 @@ app.all('/secret', function (req, res, next) {
     next(); // pass control to the next handler
 });
 
+// This route path will match requests to /about.
+app.get('/about', (req, res) => res.send('About page'));
+
+// This route path will match requests to /random.text.
+app.get('/random.text', (req, res) => res.send('random text'));
+
 
 app.use((req, res, next) => res.status(404).send("Sorry can't find that resource!"));
 
